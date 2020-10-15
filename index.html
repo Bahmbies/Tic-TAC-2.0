@@ -12,6 +12,20 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1 class="header">468</h1>
+        <p id="message"></p>
+        <div class="container">
+          <form id="sign-up-form">
+            <fieldset>
+              <legend id="sign-up-msg">Sign up!</legend>
+              <label for="sign-up-email">Email</label>
+              <input id="sign-up-email" type="email" name="credentials[email]" placeholder="Email">
+              <label for="sign-up-password">Password</label>
+              <input id="sign-up-password" type="password" name="credentials[password]" placeholder="Password">
+              <label for="sign-up-password_confirmation">Password Confirmation</label>
+              <input id="sign-up-password_confirmmation" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <input type="submit" value="Sign up!">
+            </fieldset>
+          </form>
     </body>
 </html>
