@@ -9,32 +9,32 @@ const signUpFailed = function () {
 }
 
 const signInSuccess = function (response) {
-    $('#message').text('Sign In Successful! ' + response.user.email)
+    $('#alert-msg').text('Sign In Successful! ' + response.user.email)
     store.user = response.user
-    $('#password-change').show()
-    $('#sign-out').show()
-    $('#sign-up').hide()
-    $('#sign-in').hide()
+    // $('#password-change').show()
+    // $('#sign-out').show()
+    // $('#sign-up').hide()
+    // $('#sign-in').hide()
   }
   
   const signInFailed = function () {
-    $('#message').text('Sign in failed, try again')
+    $('#alert-msg').text('Sign in failed, try again')
   }
   
   const passwordChangeSuccess = function (response) {
-    $('#message').text('Your password has been changed')
+    $('#alert-msg').text('Your password has been changed')
   }
   
   const passwordChangeFailed = function () {
-    $('#message').text('Password change failed, try again')
+    $('#alert-msg').text('Password change failed, try again')
   }
   
   const signOutSuccess = function (response) {
-      $('#message').text('Sign Out Successful!')
+      $('#alert-msg').text('Sign Out Successful!')
     }
     
     const signOutFailed = function () {
-      $('#message').text('Sign Out Failed!')
+      $('#alert-msg').text('Sign Out Failed!')
     }
   
   
@@ -48,8 +48,3 @@ const signInSuccess = function (response) {
     signOutSuccess,
     signOutFailed
   }
-
-module.exports = {
-    signUpSuccess,
-    signUpFailed
-}
