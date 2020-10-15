@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic-Tac-2.0</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -10,14 +10,37 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        </style>
     </head>
     <body>
-      <h1 class="header">468</h1>
-        <p id="message"></p>
-        <div class="container">
+      <div class="background"></div>
+  <div class="container">
+      <h1 class="header">Tic-Tac-468</h1>
+        <p id="alert-msg"></p>
+        
+        <form id="sign-in">
+          <legend id="sign-in-msg">Welcome Back!, Sign in </legend>
+          <div class="sign-in-input">
+          <label for="sign-in-email">Email
+            <input id="sign-in-email" type="email" name="credentials[email]" placeholder="Type Email Here">
+          </label>
+
+          <label for="sign-in-password">Password 
+            <input id="sign-in-password" type="password" name="credentials[password]" placeholder="Password">
+          </label>  
+
+          <input type="submit" value="Lets Play!">
+          </div>
+
+        </form>
+        <br>
+        
           <form id="sign-up-form">
             <fieldset>
-              <legend id="sign-up-msg">Sign up!</legend>
+              <legend id="sign-up-msg">Welcome, Sign up!</legend>
+              <div class="sign-up-input">
               <label for="sign-up-email">Email</label>
               <input id="sign-up-email" type="email" name="credentials[email]" placeholder="Email">
               <label for="sign-up-password">Password</label>
@@ -25,7 +48,29 @@
               <label for="sign-up-password_confirmation">Password Confirmation</label>
               <input id="sign-up-password_confirmmation" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
               <input type="submit" value="Sign up!">
+              </div>
             </fieldset>
           </form>
+          <br>
+          
+        <form id="password-change">
+
+          <label for="change-password"> Old Password
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+          </label>
+
+          <label for="change-passowrd"> New Password
+            <input type="password" name="passwords[new]" placeholder="New Password">
+          </label>
+
+
+          <input type="submit" value="Change Password">
+
+        </form>
+        <br> 
+
+        <button id="sign-out">Sign Out!</button>
+
+          </div>
     </body>
 </html>
