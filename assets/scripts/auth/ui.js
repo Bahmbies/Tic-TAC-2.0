@@ -1,4 +1,4 @@
-const store = require('./store')
+const store = require('../store')
 
 const signUpSuccess = function (response) {
   $('#alert-msg').text('Thanks for signing up ' + response.user.email)
@@ -11,10 +11,11 @@ const signUpFailed = function () {
 const signInSuccess = function (response) {
     $('#alert-msg').text('Sign In Successful! ' + response.user.email)
     store.user = response.user
-    // $('#password-change').show()
-    // $('#sign-out').show()
-    // $('#sign-up').hide()
-    // $('#sign-in').hide()
+    $('#sign-up-form').hide()
+    $('#sign-in').hide()
+     $('#password-change').hide()
+     $('#sign-out').show()
+     $('#start-new-game').show()
   }
   
   const signInFailed = function () {
@@ -31,12 +32,16 @@ const signInSuccess = function (response) {
   
   const signOutSuccess = function (response) {
       $('#alert-msg').text('Sign Out Successful!')
+      $('#sign-in').show()
+      $('#sign-out').hide()
+      $('#start-new-game').hide()
     }
     
     const signOutFailed = function () {
       $('#alert-msg').text('Sign Out Failed!')
     }
-  
+
+
   
   module.exports = {
     signUpSuccess,
@@ -46,5 +51,5 @@ const signInSuccess = function (response) {
     passwordChangeSuccess,
     passwordChangeFailed,
     signOutSuccess,
-    signOutFailed
+    signOutFailed,
   }
