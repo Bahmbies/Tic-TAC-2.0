@@ -1,6 +1,10 @@
 const ui = require('./ui')
 const api = require('./api')
 
+ let currentPlayer = 'X'
+ const gameBoard = ['', '', '', '', '', '', '', '', '']
+let gameOver = false
+
 
 const onStartGame = function (event) {
 
@@ -13,6 +17,30 @@ const onStartGame = function (event) {
   
   }
 
+const onPlayGame = function (event) {
+    event.preventDefault()
+//       const cellIndex = event.target.dataset.cellIndex
+
+//     gameBoard[cellIndex] = currentPlayer
+
+//    const gameBoard = {
+//      game: {
+//        cell: {
+//          index: cellIndex,
+//          value: currentPlayer,
+//        },
+//        gameOver: gameOver
+//      }
+//    }
+
+    api.playGame()
+    .then(ui.onPlayGameSuccess)
+    .catch(ui.onPlayGameFailed)
+}
+
+
+
 module.exports = {
-    onStartGame
+    onStartGame,
+    onPlayGame,
 }

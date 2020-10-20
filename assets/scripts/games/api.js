@@ -9,9 +9,37 @@ const startGame = () => {
       headers: {
         Authorization: 'Bearer ' + store.user.token,
       },
-      data: {}
+      data: {},
     })
   }
-module.exports = {
-    startGame
+
+  const playGame = (gameBoard) => {
+    return $.ajax({
+      url: config.apiUrl + '/games/' + store.game._id,
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + store.user.token
+      },
+      data: gameBoard
+    })
+ 
 }
+
+const updateGame = (gameBoard) => {
+    return $.ajax({
+      url: config.apiUrl + '/games/' + store.game._id,
+      method: 'PATCH',
+      headers: {
+        Authorization: 'Bearer ' + store.user.token
+      },
+      data: gameBoard
+    })
+ 
+}
+
+
+module.exports = {
+    startGame,
+    playGame,
+    updateGame
+}   
