@@ -13,7 +13,7 @@ const signInSuccess = function (response) {
     store.user = response.user
     $('#sign-up-form').hide()
     $('#sign-in').hide()
-     $('#password-change').hide()
+     $('#password-change').show()
      $('#sign-out').show()
      $('#start-new-game').show()
   }

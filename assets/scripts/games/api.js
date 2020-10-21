@@ -1,45 +1,53 @@
 const store = require('../store')
 const config = require('../config')
 
+const playGame = (data) => {
+    return $.ajax({
+        url: config.apiUrl + '/games',
+        method: 'GET',
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        },
+
+    })
+
+}
 
 const startGame = () => {
     return $.ajax({
-      url: config.apiUrl + '/games',
-      method: 'POST',
-      headers: {
-        Authorization: 'Bearer ' + store.user.token,
-      },
-      data: {},
+        url: config.apiUrl + '/games',
+        method: 'POST',
+        headers: {
+            Authorization: 'Bearer ' + store.user.token,
+        },
+        data: {},
     })
-  }
-
-  const playGame = (gameBoard) => {
-    return $.ajax({
-      url: config.apiUrl + '/games/' + store.game._id,
-      method: 'GET',
-      headers: {
-        Authorization: 'Bearer ' + store.user.token
-      },
-      data: gameBoard
-    })
- 
-}
-
-const updateGame = (gameBoard) => {
-    return $.ajax({
-      url: config.apiUrl + '/games/' + store.game._id,
-      method: 'PATCH',
-      headers: {
-        Authorization: 'Bearer ' + store.user.token
-      },
-      data: gameBoard
-    })
- 
 }
 
 
-module.exports = {
-    startGame,
-    playGame,
-    updateGame
-}   
+const updateGame = (index, currentPlayer, gameOver) => {
+        return $.ajax({
+                url: config.apiUrl + '/games/' + store.game._id,
+                method: 'PATCH',
+                headers: {
+                    Authorization: 'Bearer ' + store.user.token
+                },
+                data: {
+                    game: {
+                        cell: {
+                            index: index,
+                            value: currentPlayer
+                        },
+                        over: gameOver
+                    }
+                }
+            })
+
+        }
+
+
+        module.exports = {
+            startGame,
+            playGame,
+            updateGame
+        }

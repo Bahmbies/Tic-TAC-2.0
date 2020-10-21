@@ -2,11 +2,11 @@ const store = require('../store')
 
 const onStartGameSuccess = function (response) {
     $('#alert-msg').text('Game is Starting...')
-    $('#game-board').show()
+    store.game = response.game
     $('#sign-out').show()
     $('#start-new-game').show()
-    $('.box').text('')
-    store.game = response.game
+    $('#game-board').show()
+    // $('.box').css('background', 'blue').text('')
 }
 
 const onStartGameFailed = function () {
@@ -14,15 +14,15 @@ const onStartGameFailed = function () {
 }
 
 const onPlayGameSuccess = function (res) {
-    $('#alert-msg').text('Enjoy!')
-    // console.log(res)
-    // const cells = res.game.cells
-    // for (let i = 0; i < cells.length; i++) {
-    //     if (cells[i]) {
-    //         const box = $('.box')[i]
-    //         $(box).text(cells[i])
-    //     }
-    // }
+     $('#alert-msg').text('Enjoy!')
+    //  console.log(res)
+    //  const cells = res.game.cells
+    //  for (let i = 0; i < cells.length; i++) {
+    //      if (cells[i]) {
+    //          const box = $('.box')[i]
+    //          $(box).text(cells[i])
+    //      }
+    //  }
   }
 
   const onPlayGameFailed = function () {
@@ -30,11 +30,22 @@ const onPlayGameSuccess = function (res) {
    
   }
 
+  const onUpdateGameSuccess = function () {
+    
+      
+  }
+
+  const onUpdateGameFailed = function () {
+
+  }
+
 
 module.exports = {
     onStartGameSuccess,
     onStartGameFailed,
     onPlayGameSuccess,
-    onPlayGameFailed
+    onPlayGameFailed,
+    onUpdateGameSuccess,
+    onUpdateGameFailed
 }
 
