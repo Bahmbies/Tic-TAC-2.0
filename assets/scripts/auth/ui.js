@@ -35,6 +35,8 @@ const signInSuccess = function (response) {
       $('#sign-in').show()
       $('#sign-out').hide()
       $('#start-new-game').hide()
+      $('#game-board').hide()
+      $('#sign-up-form').show()
     }
     
     const signOutFailed = function () {
