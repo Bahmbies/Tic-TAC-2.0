@@ -29,16 +29,16 @@ const updateGame = (index, currentPlayer, gameOver) => {
         return $.ajax({
                 url: config.apiUrl + '/games/' + store.game._id,
                 method: 'PATCH',
-                headers: {
-                    Authorization: 'Bearer ' + store.user.token
+                headers: { 
+                Authorization: 'Bearer ' + store.user.token
                 },
                 data: {
-                    game: {
-                        cell: {
-                            index: index,
-                            value: currentPlayer
+                    'game': {
+                        'cell': {
+                            'index': index,
+                            'value': currentPlayer
                         },
-                        over: gameOver
+                        'over': gameOver
                     }
                 }
             })
