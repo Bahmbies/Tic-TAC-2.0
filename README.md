@@ -1,4 +1,4 @@
-# Tic x Tac x Toe
+# Tic x Tac x 468
 This application allows the user to sign-in, sign-up, change their password, and sign-out. It allows signed in users to start playing a game of Tic Tac 468, and check  total games played it announces a winner and restarts the game once a winner or a draw is established. 
 
 
