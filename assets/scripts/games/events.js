@@ -20,7 +20,9 @@ const onBoxClick = (event) => {
   const index = box.data('cell-index')
   console.log(index)
   // only execute code below if empty square is clicked
-  if(!box.text()) {
+  if(!box.text() && gameOver === false  ) {
+    console.log(gameOver)
+
     // If the value at “index” in the gameBoard array ===“”, I should “return” and do nothing
    // gameBoard[index] = currentPlayer
     // console.log(gameBoard)
@@ -34,7 +36,7 @@ const onBoxClick = (event) => {
     .then(ui.onUpdateGameSuccess)
     .then(() => {      
       checkForWinner(currentPlayer)
-      gameOver = true
+      // gameOver = true
       console.log('zebra')
        //  gameOver = true 
         // api.updateGame(index, currentPlayer, gameOver)
@@ -58,7 +60,8 @@ const onBoxClick = (event) => {
 const onStartGame = function (event) {
 
     event.preventDefault()
-
+    gameOver = false
+    currentPlayer = 'X'
     api.startGame()
 
     .then(ui.onStartGameSuccess)
@@ -99,16 +102,18 @@ const checkForWinner = function(currentPlayer) {
 if (store.game.cells[0] ===  store.game.cells[1] &&
   store.game.cells[0] === store.game.cells[2] && store.game.cells[0] !== '') {
     $('#alert-msg').text(`${currentPlayer === 'O' ? 'X' : 'O'} WINS!`) 
+      gameOver = true
+    }
 
 
-   } else if (store.game.cells[3] ===  store.game.cells[4] &&
+    else if (store.game.cells[3] ===  store.game.cells[4] &&
     store.game.cells[3] === store.game.cells[5] && store.game.cells[3] !== '') {
       $('#alert-msg').text(`${currentPlayer === 'O' ? 'X' : 'O'} WINS!`) 
-      return
+      
     } else if (store.game.cells[6] ===  store.game.cells[7] &&
       store.game.cells[6] === store.game.cells[8] && store.game.cells[6] !== '') {
         $('#alert-msg').text(`${currentPlayer === 'O' ? 'X' : 'O'} WINS!`)
-        return
+        
       } else if (store.game.cells[0] ===  store.game.cells[3] &&
         store.game.cells[0] === store.game.cells[6] && store.game.cells[0] !== '') {
           $('#alert-msg').text(`${currentPlayer === 'O' ? 'X' : 'O'} WINS!`)

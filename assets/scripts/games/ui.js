@@ -7,6 +7,10 @@ const onStartGameSuccess = function (response) {
   $('#start-new-game').show()
   $('#game-board').show()
   $('#reset-game').show()
+  $('.box').empty('')
+  store.gameOver =
+
+  console.log(store.game.cells)
   // $('.box').css('background', 'blue').text('')
 }
 
