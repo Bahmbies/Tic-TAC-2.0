@@ -37,6 +37,7 @@ const signInSuccess = function (response) {
       $('#start-new-game').hide()
       $('#game-board').hide()
       $('#sign-up-form').show()
+      $('#password-change').hide()
     }
     
     const signOutFailed = function () {

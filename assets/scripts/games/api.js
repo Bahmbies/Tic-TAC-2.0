@@ -46,8 +46,20 @@ const updateGame = (index, currentPlayer, gameOver) => {
         }
 
 
+        const gamesPlayed = function (data) {
+            return $.ajax({
+              url: config.apiUrl + '/games/',
+              method: 'GET',
+              headers: {
+                Authorization: 'Bearer ' + store.user.token
+              },
+              data: data
+            })
+          }
+
         module.exports = {
             startGame,
             playGame,
-            updateGame
+            updateGame,
+            gamesPlayed
         }

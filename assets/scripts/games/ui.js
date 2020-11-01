@@ -6,9 +6,9 @@ const onStartGameSuccess = function (response) {
   $('#sign-out').show()
   $('#start-new-game').show()
   $('#game-board').show()
-  $('#reset-game').show()
+  $('#count-games').show()
   $('.box').empty('')
-  store.gameOver =
+  store.gameOver = false
 
   console.log(store.game.cells)
   // $('.box').css('background', 'blue').text('')
@@ -54,11 +54,21 @@ const onUpdateGameFailed = function () {
 }
 
 
+const onGamesPlayedSuccess = function (response) {
+  $('#alert-msg').text(response.games.length)
+}
+
+const onGamesPlayedFailed = function () {
+  $('#alert-msg').text('Cannot view games, try again')
+}
+
 module.exports = {
   onStartGameSuccess,
   onStartGameFailed,
   onPlayGameSuccess,
   onPlayGameFailed,
   onUpdateGameSuccess,
-  onUpdateGameFailed
+  onUpdateGameFailed,
+  onGamesPlayedSuccess,
+  onGamesPlayedFailed
 }
