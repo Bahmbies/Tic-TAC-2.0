@@ -110,36 +110,36 @@ if (cells[0] ===  cells[1] &&
      gameOver = true 
 
     }
-//     else if ( cells[3] ===   cells[4] &&
-//      cells[3] ===  cells[5] &&  cells[3] !== '') {
-//       $('#alert-msg').text(`${currentPlayer === 'O' ? 'X' : 'O'} WINS!`) 
-//       gameOver = true
+     else if ( cells[3] ===   cells[4] &&
+      cells[3] ===  cells[5] &&  cells[3] !== '') {
+       $('#alert-msg').text( `${currentPlayer} WINS!`) 
+    gameOver = true
       
-//     } else if ( cells[6] ===   cells[7] &&
-//        cells[6] ===  cells[8] &&  cells[6] !== '') {
-//         $('#alert-msg').text(`${currentPlayer === 'O' ? 'X' : 'O'} WINS!`)
-//         gameOver = true
-//       } else if ( cells[0] ===   cells[3] &&
-//          cells[0] ===  cells[6] &&  cells[0] !== '') {
-//           $('#alert-msg').text(`${currentPlayer === 'O' ? 'X' : 'O'} WINS!`)
-//           gameOver = true
-//         } else if ( cells[1] ===   cells[4] &&
-//            cells[1] ===  cells[7] &&  cells[1] !== '') {
-//             $('#alert-msg').text(`${currentPlayer === 'O' ? 'X' : 'O'} WINS!`)
-//             gameOver = true  
-//           } else if ( cells[2] ===   cells[5] &&
-//          cells[2] ===  cells[8] &&  cells[2] !== '') {
-//           $('#alert-msg').text(`${currentPlayer === 'O' ? 'X' : 'O'} WINS!`) 
-//           gameOver = true
-//       } else if ( cells[0] ===   cells[4] &&
-//          cells[0] ===  cells[8] &&  cells[0] !== '') {
-//           $('#alert-msg').text(`${currentPlayer === 'O' ? 'X' : 'O'} WINS!`)
-//           gameOver = true
-//       } else if ( cells[2] ===   cells[4] &&
-//          cells[2] ===  cells[6] &&  cells[2] !== '') {
-//           $('#alert-msg').text(`${currentPlayer === 'O' ? 'X' : 'O'} WINS!`)
-//           gameOver = true
-//       } else return false   
+     } else if ( cells[6] ===   cells[7] &&
+        cells[6] ===  cells[8] &&  cells[6] !== '') {
+         $('#alert-msg').text( `${currentPlayer} WINS!`)
+         gameOver = true
+       } else if ( cells[0] ===   cells[3] &&
+          cells[0] ===  cells[6] &&  cells[0] !== '') {
+           $('#alert-msg').text( `${currentPlayer} WINS!`)
+           gameOver = true
+         } else if ( cells[1] ===   cells[4] &&
+            cells[1] ===  cells[7] &&  cells[1] !== '') {
+             $('#alert-msg').text( `${currentPlayer} WINS!`)
+            gameOver = true  
+           } else if ( cells[2] ===   cells[5] &&
+          cells[2] ===  cells[8] &&  cells[2] !== '') {
+           $('#alert-msg').text( `${currentPlayer} WINS!`) 
+           gameOver = true
+       } else if ( cells[0] ===   cells[4] &&
+          cells[0] ===  cells[8] &&  cells[0] !== '') {
+           $('#alert-msg').text( `${currentPlayer} WINS!`)
+           gameOver = true
+       } else if ( cells[2] ===   cells[4] &&
+          cells[2] ===  cells[6] &&  cells[2] !== '') {
+           $('#alert-msg').text( `${currentPlayer} WINS!`)
+           gameOver = true
+      } else $('#alert-msg').text( 'A TIE!')
 }
 
  const gamesPlayed = function (event) {
