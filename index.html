@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tic-Tac-2.0</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  </style>
+</head>
+
+<body>
+
+  <div class="home-page-container">
+    <h1 class="header">Tic-Tac-468</h1>
+    <p id="alert-msg"></p>
+
+    <form id="sign-in">
+      <legend id="sign-in-msg">Welcome Back!, Sign in </legend>
+      <div class="sign-in-input">
+        <label for="sign-in-email">Email
+          <input id="sign-in-email" type="email" name="credentials[email]" placeholder="Type Email Here">
+        </label>
+
+        <label for="sign-in-password">Password
+          <input id="sign-in-password" type="password" name="credentials[password]" placeholder="Password">
+        </label>
+
+        <input type="submit" value="Lets Play!">
+      </div>
+
+    </form>
+    <br>
+
+
+    <form id="password-change">
+      <legend id="password-change-msg">Change Ur Password</legend>
+      <div class="password-change-input">
+        <label for="change-password"> Old Password
+          <input type="password" name="passwords[old]" placeholder="Old Password">
+        </label>
+
+        <label for="change-passowrd"> New Password
+          <input type="password" name="passwords[new]" placeholder="New Password">
+        </label>
+
+
+        <input type="submit" value="Change Password">
+
+      </div>
+    </form>
+    <br>
+
+    <form id="sign-up-form">
+      <fieldset>
+        <legend id="sign-up-msg"> Sign up!</legend>
+        <div class="sign-up-input">
+          <label for="sign-up-email">Email</label>
+          <input id="sign-up-email" type="email" name="credentials[email]" placeholder="Email">
+          <label for="sign-up-password">Password</label>
+          <input id="sign-up-password" type="password" name="credentials[password]" placeholder="Password">
+          <label for="sign-up-password_confirmation">Password Confirmation</label>
+          <input id="sign-up-password_confirmmation" type="password" name="credentials[password_confirmation]"
+            placeholder="Confirm Password">
+          <input type="submit" value="Sign up!">
+        </div>
+      </fieldset>
+    </form>
+    <br>
+
+    <form id="sign-out">
+
+      <button id="sign-out-btn">Sign Out!</button>
+    </form>
+
+    <form id="start-new-game">
+      <button id="start-game">START GAME</button>
+
+    </form>
+
+    <div id='scorecard'>
+      <h1 id="game-message" class="game-message"></h1>
+    
+      <h3>O Wins: <span id="o-win">0</span><br></h3><br>
+      <h3>X Wins: <span id="x-win">0</span><br></h3><br>
+      <h3>Turn: <span id="turn">X</span><br></h3><br>
+      <h3>Tie: <span id="ties">0</span><br></h3><br>
+    </div>
+
+
+    <div id="game-board" class="container">
+      <div class="row">
+        <div id="0" class="col-4-box box" data-cell-index="0"></div>
+        <div id="1" class="col-4-box box" data-cell-index="1"></div>
+        <div id="2" class="col-4-box box" data-cell-index="2"></div>
+      </div>
+      <div class="row">
+        <div id="3" class="col-4-box box" data-cell-index="3"></div>
+        <div id="4" class="col-4-box box" data-cell-index="4"></div>
+        <div id="5" class="col-4-box box" data-cell-index="5"></div>
+      </div>
+      <div class="row">
+        <div id="6" class="col-4-box box" data-cell-index="6"></div>
+        <div id="7" class="col-4-box box" data-cell-index="7"></div>
+        <div id="8" class="col-4-box box" data-cell-index="8"></div>
+      </div>
+    </div>
+
+    <!-- <form id="reset-game">
+      <button id="reset-new-game">Reset </button>
+    </form> -->
+
+    <div>
+      <form id="count-games">
+        <legend id="games-played">See how many games you played</legend>
+        <button id="view-btn">View Games Played</button>
+      </form>
+    </div>
+
+  </div>
+</body>
+
+</html>
