@@ -16,10 +16,10 @@ body {
     text-align: center;
 }
 
-#alert-msg, #sign-up-msg, #sign-in-msg, #password-change-msg {
+#alert-msg, #sign-up-msg, #sign-in-msg, #password-change-msg, #games-played {
 
-    font-family: 'Press Start 2P', cursive;
-    text-shadow: 12px 2px  5px  blueviolet;
+font-family: 'Press Start 2P', cursive;
+text-shadow: 12px 2px  5px  blueviolet;
     font-size: 30px;
     margin-bottom: 15px;
     text-align: center;
@@ -44,7 +44,7 @@ input[type="submit"] {
 
 }
 
-#sign-out-btn, #start-game, #reset-new-game {
+#sign-out-btn, #start-game, #count-games, #view-btn   {
     box-shadow: 12px 2px 5px blueviolet;
     color: whitesmoke;
     background-color: black;
